@@ -449,7 +449,7 @@ function initDownloadCV() {
             
             // Here you would normally trigger actual file download
             // window.open('path/to/your/cv.pdf', '_blank');
-            console.log('CV download initiated');
+            console.log('Resume download initiated');
         }, 1500);
     });
 }
