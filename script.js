@@ -171,7 +171,7 @@ heroButtons.forEach(button => {
     });
 });
 
-// Initialize everything when DOM is loaded
+
 document.addEventListener('DOMContentLoaded', () => {
     initTheme();
     window.addEventListener('scroll', handleScroll);
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initSocialLinksHover();
 });
 
-// Add active navigation link highlighting
+
 function updateActiveNavLink() {
     const sections = document.querySelectorAll('section[id]');
     const scrollPos = window.scrollY + 100;
@@ -212,7 +212,7 @@ function updateActiveNavLink() {
 
 window.addEventListener('scroll', updateActiveNavLink);
 
-// Add some entrance animations on scroll
+
 function animateOnScroll() {
     const elements = document.querySelectorAll('.section');
     
@@ -227,7 +227,7 @@ function animateOnScroll() {
     });
 }
 
-// Initialize section animations
+
 document.querySelectorAll('.section').forEach(section => {
     section.style.opacity = '0';
     section.style.transform = 'translateY(30px)';
@@ -237,7 +237,7 @@ document.querySelectorAll('.section').forEach(section => {
 window.addEventListener('scroll', animateOnScroll);
 animateOnScroll(); // Run once on load
 
-// Skills Progress Animation
+
 function animateSkills() {
     const skillItems = document.querySelectorAll('.skill-item');
     const skillsSection = document.querySelector('.skills');
@@ -269,7 +269,7 @@ function animateSkills() {
     observer.observe(skillsSection);
 }
 
-// Tech Icons Hover Effect
+
 function initTechIcons() {
     const techIcons = document.querySelectorAll('.tech-icon');
     
@@ -284,7 +284,7 @@ function initTechIcons() {
     });
 }
 
-// Project Filter Functionality
+
 function initProjectFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
@@ -293,9 +293,9 @@ function initProjectFilters() {
     
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            // Remove active class from all buttons
+           
             filterBtns.forEach(b => b.classList.remove('active'));
-            // Add active class to clicked button
+            
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
@@ -321,14 +321,14 @@ function initProjectFilters() {
     });
 }
 
-// Load More Projects Functionality
+
 function initLoadMore() {
     const loadMoreBtn = document.querySelector('.load-more-btn');
     
     if (!loadMoreBtn) return;
     
     loadMoreBtn.addEventListener('click', () => {
-        // Simulate loading more projects
+        
         loadMoreBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading...';
         
         setTimeout(() => {
@@ -339,7 +339,7 @@ function initLoadMore() {
     });
 }
 
-// Project Card Hover Effects
+
 function initProjectHoverEffects() {
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -365,7 +365,7 @@ function initProjectHoverEffects() {
     });
 }
 
-// Initialize project animations on scroll
+
 function animateProjectsOnScroll() {
     const projectCards = document.querySelectorAll('.project-card');
     
@@ -389,7 +389,7 @@ function animateProjectsOnScroll() {
     });
 }
 
-// Resume Animations
+
 function initResumeAnimations() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     const resumeSection = document.querySelector('.resume');
@@ -415,7 +415,7 @@ function initResumeAnimations() {
     
     observer.observe(resumeSection);
     
-    // Initialize timeline items as hidden
+   
     timelineItems.forEach(item => {
         item.style.opacity = '0';
         item.style.transform = 'translateY(30px)';
@@ -423,7 +423,6 @@ function initResumeAnimations() {
     });
 }
 
-// Download CV Functionality
 function initDownloadCV() {
     const downloadBtn = document.querySelector('.download-cv-btn');
     
@@ -432,29 +431,28 @@ function initDownloadCV() {
     downloadBtn.addEventListener('click', (e) => {
         e.preventDefault();
         
-        // Add loading state
+       
         const originalContent = downloadBtn.innerHTML;
         downloadBtn.classList.add('loading');
         downloadBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing Download...';
         
-        // Simulate download preparation
+        
         setTimeout(() => {
             downloadBtn.innerHTML = '<i class="fas fa-check"></i> Download Ready';
             
-            // Reset after 2 seconds
+            
             setTimeout(() => {
                 downloadBtn.classList.remove('loading');
                 downloadBtn.innerHTML = originalContent;
             }, 2000);
             
-            // Here you would normally trigger actual file download
-            // window.open('path/to/your/cv.pdf', '_blank');
+            
             console.log('Resume download initiated');
         }, 1500);
     });
 }
 
-// Timeline Item Hover Effects
+
 function initTimelineHoverEffects() {
     const timelineItems = document.querySelectorAll('.timeline-item');
     
@@ -479,12 +477,12 @@ function initTimelineHoverEffects() {
     });
 }
 
-// Initialize timeline hover effects
+
 document.addEventListener('DOMContentLoaded', () => {
     initTimelineHoverEffects();
 });
 
-// Contact Form Functionality
+
 function initContactForm() {
     const contactForm = document.getElementById('contact-form');
 
@@ -504,7 +502,7 @@ function initContactForm() {
             message: formData.get('message')
         };
 
-        // Basic validation
+        
         if (!data.name || !data.email || !data.subject || !data.message) {
             showFormMessage('Please fill in all required fields.', 'error');
             return;
@@ -516,11 +514,10 @@ function initContactForm() {
             return;
         }
 
-        // Button loading state
         submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
         submitBtn.disabled = true;
 
-        // Send with EmailJS
+       
         emailjs.send("service_eq0y5tw", "template_rb2eysm", {
             from_name: data.name,
             from_email: data.email,
@@ -543,40 +540,39 @@ function initContactForm() {
 }
 
 
-// Show message helper
+
 function showFormMessage(msg, type = 'success') {
-    alert(msg); // You can replace this with your own styled message
+    alert(msg);
 }
 
 
-// Show form message
+
 function showFormMessage(message, type) {
     const contactForm = document.getElementById('contact-form');
     
-    // Remove existing messages
     const existingMessage = contactForm.querySelector('.form-success, .form-error');
     if (existingMessage) {
         existingMessage.remove();
     }
     
-    // Create new message
+    
     const messageDiv = document.createElement('div');
     messageDiv.className = type === 'success' ? 'form-success' : 'form-error';
     messageDiv.textContent = message;
     messageDiv.style.opacity = '0';
     messageDiv.style.transform = 'translateY(10px)';
     
-    // Add message to form
+   
     contactForm.appendChild(messageDiv);
     
-    // Animate message in
+    
     setTimeout(() => {
         messageDiv.style.transition = 'all 0.3s ease';
         messageDiv.style.opacity = '1';
         messageDiv.style.transform = 'translateY(0)';
     }, 100);
     
-    // Remove message after 5 seconds
+    
     setTimeout(() => {
         if (messageDiv.parentNode) {
             messageDiv.style.opacity = '0';
@@ -588,7 +584,7 @@ function showFormMessage(message, type) {
     }, 5000);
 }
 
-// Animate contact form groups on scroll
+
 function animateContactForm() {
     const formGroups = document.querySelectorAll('.form-group');
     const contactSection = document.querySelector('.contact');
@@ -615,7 +611,7 @@ function animateContactForm() {
     observer.observe(contactSection);
 }
 
-// Contact info cards hover effects
+
 function initContactInfoHover() {
     const contactCards = document.querySelectorAll('.contact-info-card');
     
@@ -632,7 +628,7 @@ function initContactInfoHover() {
     });
 }
 
-// Social links hover effects
+
 function initSocialLinksHover() {
     const socialLinks = document.querySelectorAll('.contact-social-link');
     
