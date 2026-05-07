@@ -100,7 +100,7 @@ if (scrollDown) {
 
 
 // start typing
-const texts = ["Frontend Developer", "Web Developer", "AI Integrater"];
+const texts = ["AI Enabled FullStack Developer", "MERN Stack Developer", "AI Automation Workflow(n8n) Developer"];
 let count = 0;
 const container = document.getElementById('typing-container');
 
