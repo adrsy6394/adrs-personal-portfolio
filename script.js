@@ -462,7 +462,7 @@ function initTimelineHoverEffects() {
             highlightTags.forEach((tag, index) => {
                 setTimeout(() => {
                     tag.style.transform = 'translateY(-2px)';
-                    tag.style.boxShadow = '0 4px 12px rgba(59, 130, 246, 0.3)';
+                    tag.style.boxShadow = '0 4px 12px rgba(255, 77, 45, 0.3)';
                 }, index * 50);
             });
         });
