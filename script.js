@@ -345,7 +345,7 @@ function initProjectHoverEffects() {
     
     projectCards.forEach(card => {
         const overlay = card.querySelector('.project-overlay');
-        const links = card.querySelectorAll('.project-link');
+        const links = overlay.querySelectorAll('.project-link');
         
         card.addEventListener('mouseenter', () => {
             links.forEach((link, index) => {
